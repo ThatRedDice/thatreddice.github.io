@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="images/reddice.ico">
-    <title>red.fr</title>
+    <title>sitedered.fr</title>
     <style>
         body {
             background-color: #000; 
@@ -79,6 +79,10 @@
         .trigger:hover + .secret-box {
             display: block; /* Apparaît au survol */
         }
+
+        .trigger {
+            width: fit-content;
+        }
     </style>
 </head>
 <body>
@@ -100,18 +104,25 @@
             </header>
 
             <main>
-                <p>Ceci est mon petit coin du web.</p>
+                <p>Ceci est mon petit site web perso.</p>
                 <p>Inserer texte ici.</p>
-                
+    
                 <br>
                 <div style="text-align: center;">
                     <img src="images/reddice.png" alt="Le dé rouge" width="100" style="border: 2px solid black;">
                 </div>
 
                 <br>
-                <p class="trigger" style="cursor: pointer; text-decoration: underline; color: red;">???</p>
-                <div class="secret-box">
-                    <img src="images/eglantine.png" width="50" height="50"> 
+    
+                <div style="text-align: right; margin-right: 10px;">
+        
+                    <span class="trigger" style="cursor: pointer;">
+                        <img src="images/bomb.webp" alt="bomb" height="20" width="20">
+                    </span>
+        
+                    <div class="secret-box" style="text-align: center;"> <img src="images/eglantine.png" width="100" height="100"> 
+                        <h3>💣 Eglantine 💣</h3> </div>
+
                 </div>
             </main>
         </div>
