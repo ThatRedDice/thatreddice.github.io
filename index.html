@@ -7,7 +7,6 @@
     <title>Mon Espace Personnel</title>
     <style>
         body {
-            /* On met les étoiles sur tout le fond de l'écran */
             background-color: #000; 
             background-image: url('images/starsbackground.gif');
             background-repeat: repeat;
@@ -15,45 +14,108 @@
             font-family: "Courier New", Courier, monospace;
             margin: 0;
             padding: 0;
+            color: #00ff00; /* Texte vert fluo style terminal/matrix */
+            cursor: crosshair; /* Curseur rétro */
         }
 
-        .container {
-            background-color: white; 
+        /* Style fenêtre rétro style Windows 95/98 */
+        .window {
+            background-color: #c0c0c0; /* Gris classique */
             max-width: 800px;
-            margin: 40px auto; /* Centre le carré avec de l'espace en haut */
+            margin: 40px auto;
+            border: 3px solid #dfdfdf;
+            border-right-color: #404040;
+            border-bottom-color: #404040;
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.5);
+            color: black; /* Le texte à l'intérieur reste lisible */
+        }
+
+        .title-bar {
+            background: linear-gradient(90deg, darkblue, royalblue);
+            color: white;
+            padding: 5px 10px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .window-body {
             padding: 20px;
-            border: 2px solid #000;
-            box-shadow: 10px 10px 0px rgba(0,0,0,0.5); /* Ombre plus marquée pour le style retro */
         }
 
         header { 
-            border-bottom: 2px solid #000; 
+            border-bottom: 2px dashed #000; 
             padding-bottom: 10px; 
             margin-bottom: 20px;
+            text-align: center;
         }
 
-        nav a { margin-right: 15px; color: blue; text-decoration: none; font-weight: bold; }
-        nav a:hover { text-decoration: underline; color: red; }
+        nav a { 
+            margin: 0 10px; 
+            color: blue; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border: 1px solid blue;
+            padding: 2px 5px;
+            background: white;
+        }
+        
+        nav a:hover { 
+            background-color: blue; 
+            color: white; 
+            cursor: help;
+        }
 
-        main { color: #333; line-height: 1.5; }
+        /* Effet pour les liens/secrets */
+        .secret-box {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px dotted red;
+            background: yellow;
+            display: none; /* Caché par défaut */
+        }
+
+        .trigger:hover + .secret-box {
+            display: block; /* Apparaît au survol */
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Bienvenue sur mon site !</h1>
-            <nav>
-                <a href="#">Accueil</a>
-                <a href="#">Projets</a>
-                <a href="#">Contact</a>
-            </nav>
-        </header>
+    <div class="window">
+        <div class="title-bar">
+            <span>C:\User\Moi\Internet.exe</span>
+            <span style="border:1px solid white; padding:0 5px; cursor:pointer;">X</span>
+        </div>
+        
+        <div class="window-body">
+            <header>
+                <h1>★ Bienvenue ! ★</h1>
+                <nav>
+                    <a href="#">[Accueil]</a>
+                    <a href="#">[Projets]</a>
+                    <a href="#">[???]</a>
+                </nav>
+            </header>
 
-        <main>
-            <p>Ceci est mon petit coin du web, hébergé sur GitHub Pages.</p>
-            <p>Inspiré par l'esthétique du web personnel.</p>
-        </main>
+            <main>
+                <p>Ceci est mon petit coin du web.</p>
+                <p>Inserer texte ici.</p>
+                
+                <br>
+                <div style="text-align: center;">
+                    <img src="images/reddice.png" alt="Le dé rouge" width="100" style="border: 2px solid black;">
+                </div>
+
+                <br>
+                <p class="trigger" style="cursor: pointer; text-decoration: underline; color: red;">Ne passe surtout pas ta souris ici...</p>
+                <div class="secret-box">
+                    <img src="images/eglantine.png"> 
+                    eglantine
+                </div>
+            </main>
+        </div>
     </div>
 
 </body>
