@@ -5,85 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="images/reddice.ico">
     <title>sitedered.fr</title>
-    <style>
-        body {
-            background-color: #000; 
-            background-image: url('images/starsbackground.gif');
-            background-repeat: repeat;
-            background-attachment: fixed;
-            font-family: "Courier New", Courier, monospace;
-            margin: 0;
-            padding: 0;
-            color: #00ff00; /* Texte vert fluo style terminal/matrix */
-            cursor: crosshair; /* Curseur rétro */
-        }
-
-        /* Style fenêtre rétro style Windows 95/98 */
-        .window {
-            background-color: #c0c0c0; /* Gris classique */
-            max-width: 800px;
-            margin: 40px auto;
-            border: 3px solid #dfdfdf;
-            border-right-color: #404040;
-            border-bottom-color: #404040;
-            box-shadow: 10px 10px 0px rgba(0,0,0,0.5);
-            color: black; /* Le texte à l'intérieur reste lisible */
-        }
-
-        .title-bar {
-            background: linear-gradient(90deg, darkblue, royalblue);
-            color: white;
-            padding: 5px 10px;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .window-body {
-            padding: 20px;
-        }
-
-        header { 
-            border-bottom: 2px dashed #000; 
-            padding-bottom: 10px; 
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        nav a { 
-            margin: 0 10px; 
-            color: blue; 
-            text-decoration: none; 
-            font-weight: bold; 
-            border: 1px solid blue;
-            padding: 2px 5px;
-            background: white;
-        }
-        
-        nav a:hover { 
-            background-color: blue; 
-            color: white; 
-            cursor: help;
-        }
-
-        /* Effet pour les liens/secrets */
-        .secret-box {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px dotted red;
-            background: yellow;
-            display: none; /* Caché par défaut */
-        }
-
-        .trigger:hover + .secret-box {
-            display: block; /* Apparaît au survol */
-        }
-
-        .trigger {
-            width: fit-content;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -95,21 +17,22 @@
         
         <div class="window-body">
             <header>
-                <h1>★ Bienvenue ! ★</h1>
+                <h1>Bienvenue ! <img src="images/hi.gif" height="7%" width="7%"></h1>
                 <nav>
                     <a href="index.html">[Accueil]</a>
                     <a href="projets.html">[Projets]</a>
-                    <a href="#">[???]</a>
+                    <a href="reseaux.html">[Reseaux]</a>
                 </nav>
             </header>
 
             <main>
-                <p>Ceci est mon petit site web perso.</p>
-                <p>Inserer texte ici</p>
-    
+                <p>Bien le bonjour! Bienvenue sur mon site web, je m'appele ███ mais tu peux m'appeler Red, je suis francais<img src="images/french.gif" height="3%" width="3%"></p>
+                <p>Ceci est mon petit site web perso où je raconte ma vie et jsp quoi d'autre.<img src="images/computer.gif" height="3%" width="3%"></p>
+
                 <br>
+
                 <div style="text-align: center;">
-                    <img src="images/reddice.png" alt="Le dé rouge" width="100" style="border: 2px solid black;">
+                    <img src="images/wip.gif" alt="Site en construction" height="50%" width="50%">
                 </div>
 
                 <br>
@@ -121,12 +44,22 @@
                     </span>
         
                     <div class="secret-box" style="text-align: center;"> <img src="images/eglantine.png" width="100" height="100"> 
-                        <h3>💣 Eglantine 💣</h3> </div>
+                        <h3>Eglantine, la souris de miamo.fun</h3> </div>
 
                 </div>
             </main>
         </div>
     </div>
+
+<script>
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        document.body.classList.add('loading');
+        e.preventDefault();
+        setTimeout(() => { window.location = this.href; }, 500); 
+    });
+});
+</script>
 
 </body>
 </html>

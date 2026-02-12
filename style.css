@@ -1,0 +1,159 @@
+/* 1. IMPORTS & FONTS */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+
+/* 2. BASE */
+body {
+    background-color: #000; 
+    background-image: url('images/starsbackground.gif');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    
+    font-family: 'VT323', monospace;
+    font-size: 1.4rem;
+    color: #00ff00;
+    
+    margin: 0;
+    padding: 0;
+    cursor: crosshair;
+}
+
+img {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+a {
+    color: #ffff00;
+    text-decoration: none;
+}
+a:hover {
+    background-color: #0000ff;
+    color: #fff;
+    cursor: help;
+}
+
+
+/* 3. LAYOUT */
+.window {
+    background-color: #c0c0c0;
+    max-width: 800px;
+    margin: 40px auto;         
+    
+    border-top: 3px solid #dfdfdf;
+    border-left: 3px solid #dfdfdf;
+    border-right: 3px solid #404040;
+    border-bottom: 3px solid #404040;
+    
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.5);
+    color: black;
+}
+
+.title-bar {
+    background: linear-gradient(90deg, #000080, #1084d0);
+    color: white;
+    padding: 6px 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+.window-body {
+    padding: 20px;
+}
+
+
+/* 4. NAVIGATION */
+nav {
+    text-align: center;
+    border-bottom: 2px dashed #000;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+nav a {
+    margin: 0 10px;
+    color: blue;
+    font-weight: bold;
+    border: 1px solid blue;
+    padding: 2px 8px;
+    background: white;
+    box-shadow: 2px 2px 0px #aaa;
+}
+
+nav a:hover {
+    background-color: blue;
+    color: white;
+    box-shadow: 1px 1px 0px #000;
+    transform: translate(1px, 1px);
+}
+
+
+/* 5. COMPOSANTS & SECRETS */
+.retro-button {
+    background: #c0c0c0;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1.2rem;
+}
+.retro-button:active {
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.secret-box {
+    display: none;
+    margin-top: 10px;
+    background: yellow;
+    border: 1px dotted red;
+    padding: 10px;
+    color: red;
+    font-weight: bold;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+}
+
+.trigger:hover + .secret-box, 
+.trigger:hover .secret-box {
+    display: block; 
+}
+
+
+/* 6. EFFETS SPÉCIAUX */
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-track {
+    background: #404040; 
+}
+::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    border: 2px solid #fff;
+    border-right-color: #404040;
+    border-bottom-color: #404040;
+}
+
+body::after {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+    background-size: 100% 4px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+body.loading, 
+body.loading * {
+    cursor: wait !important;
+}
